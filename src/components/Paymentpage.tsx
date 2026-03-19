@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { clearCart } from "../store/slices/cartSlice";
-import "./PaymentPage.css";
+import "./Paymentpage.css";
 import checkIcon    from "../assets/icons/check.png";
 import arrowbackIcon from "../assets/icons/arrowback.png";
 
