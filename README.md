@@ -13,7 +13,7 @@
 <br/><br/>
 
 > A full-featured, responsive e-commerce web application  
-> built from scratch with **React**, **TypeScript**, **Redux Toolkit**d.
+> built from scratch with **React**, **TypeScript**, **Redux Toolkit**.
 
 <br/>
 
@@ -177,6 +177,8 @@ Every style in ShopNest was written by hand. No Bootstrap, no Tailwind, no Mater
 | `ads` | Promo banner visibility | `toggleAds` |
 
 ---
+## 🔗 Live  Demo 
+
 
 ## 📡 API Reference — DummyJSON
 
