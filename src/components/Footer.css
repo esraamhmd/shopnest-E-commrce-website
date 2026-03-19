@@ -1,0 +1,128 @@
+/* ═══════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════ */
+.footer {
+  background: white;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+.footer-container { max-width: 1440px; margin: 0 auto; padding: 0 40px; }
+
+/* ── Popular Searches ── */
+.footer-popular {
+  padding: 24px 0 20px;
+  background: #fafafa;
+  border-top: 1px solid #e5e7eb;
+}
+.footer-popular-title {
+  font-size: 15px; font-weight: 800; color: #1a1a1a;
+  margin-bottom: 14px; letter-spacing: 0.2px;
+}
+.popular-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.popular-tag {
+  padding: 5px 14px; background: white; border: 1px solid #e5e7eb;
+  border-radius: 20px; font-size: 12px; color: #374151;
+  cursor: pointer; transition: all 0.2s; white-space: nowrap;
+}
+.popular-tag:hover { background: #f97316; color: white; border-color: #f97316; }
+
+/* ── Help bar ── */
+.footer-help {
+  background: #f3f4f6;
+  padding: 32px 0;
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+}
+.footer-help-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+/* Help text — always LEFT */
+.help-text { flex-shrink: 0; }
+.help-text h3 { font-size: 20px; font-weight: 900; color: #1a1a1a; margin-bottom: 4px; }
+.help-text p  { font-size: 13px; color: #6b7280; }
+
+/* Channels — always RIGHT */
+.help-channels { display: flex; gap: 48px; flex-wrap: wrap; }
+.help-channel   { display: flex; align-items: center; gap: 14px; }
+.help-icon-img  { width: 30px; height: 30px; object-fit: contain; flex-shrink: 0; }
+.help-channel-info { display: flex; flex-direction: column; }
+.help-channel-label {
+  font-size: 11px; color: #9ca3af; font-weight: 700;
+  letter-spacing: 0.8px; margin-bottom: 3px; text-transform: uppercase;
+}
+.help-channel-value { font-size: 15px; font-weight: 800; color: #1a1a1a; }
+
+/* ── Links grid ── */
+.footer-links { padding: 44px 0 36px; }
+.footer-links-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 28px;
+}
+.footer-col h4 {
+  font-size: 13px; font-weight: 800; color: #1a1a1a;
+  margin-bottom: 16px; letter-spacing: 0.2px;
+}
+.footer-col a {
+  display: block; font-size: 12px; color: #6b7280;
+  margin-bottom: 9px; text-decoration: none;
+  cursor: pointer; transition: color 0.2s; line-height: 1.4;
+}
+.footer-col a:hover { color: #f97316; }
+
+/* ── Bottom ── */
+.footer-bottom { background: #1a1a1a; padding: 16px 0; }
+.footer-copyright { font-size: 13px; color: #9ca3af; text-align: center; }
+
+/* ── Scroll top ── */
+.scroll-top-btn {
+  position: fixed; bottom: 28px; right: 28px; z-index: 99;
+  width: 44px; height: 44px; background: #1a1a1a;
+  border: none; border-radius: 50%; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.25); transition: all 0.2s;
+}
+.scroll-top-btn:hover { background: #f97316; transform: translateY(-2px); }
+.top-icon { width: 18px; height: 18px; filter: brightness(0) invert(1); }
+
+/* ═══════════════════════════════════════
+   RTL OVERRIDES
+═══════════════════════════════════════ */
+
+/* Popular */
+.footer.rtl .footer-popular-title { text-align: right; }
+.footer.rtl .popular-tags { flex-direction: row-reverse; }
+
+
+.footer.rtl .footer-help-inner { flex-direction: row-reverse; }
+.footer.rtl .help-text { text-align: right; }
+.footer.rtl .help-channels { flex-direction: row-reverse; gap: 48px; }
+.footer.rtl .help-channel { flex-direction: row-reverse; }
+.footer.rtl .help-channel-info { text-align: right; align-items: flex-end; }
+
+/* Links grid */
+.footer.rtl .footer-links-grid { direction: rtl; }
+.footer.rtl .footer-col { text-align: right; }
+
+/* ── Responsive ── */
+@media(max-width:1280px) {
+  .footer-links-grid { grid-template-columns: repeat(4, 1fr); }
+}
+@media(max-width:900px) {
+  .footer-links-grid { grid-template-columns: repeat(3, 1fr); }
+  .help-channels { gap: 28px; }
+}
+@media(max-width:768px) {
+  .footer-container { padding: 0 20px; }
+  .footer-links-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .footer-help-inner { flex-direction: column; align-items: flex-start; gap: 20px; }
+  .footer.rtl .footer-help-inner { align-items: flex-end; }
+  .help-channels { gap: 20px; }
+}
+@media(max-width:480px) {
+  .footer-links-grid { grid-template-columns: repeat(2, 1fr); }
+}

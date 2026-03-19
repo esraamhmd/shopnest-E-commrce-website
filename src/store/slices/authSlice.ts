@@ -1,0 +1,39 @@
+import { createSlice } from "@reduxjs/toolkit";
+import type { PayloadAction } from "@reduxjs/toolkit";
+
+// ── Types ────────────────────────────────────────────────
+interface User {
+  name: string;
+  email: string;
+  avatar?: string; 
+}
+
+interface AuthState {
+  isLoggedIn: boolean;
+  user: User | null;
+}
+
+// ── Initial state ────────────────────────────────────────
+const initialState: AuthState = {
+  isLoggedIn: false,
+  user: null,
+};
+
+// ── Slice ────────────────────────────────────────────────
+const authSlice = createSlice({
+  name: "auth",
+  initialState,
+  reducers: {
+    login(state, action: PayloadAction<User>) {
+      state.isLoggedIn = true;
+      state.user       = action.payload;
+    },
+    logout(state) {
+      state.isLoggedIn = false;
+      state.user       = null;
+    },
+  },
+});
+
+export const { login, logout } = authSlice.actions;
+export default authSlice.reducer;
