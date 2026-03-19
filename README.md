@@ -211,9 +211,3 @@ MIT License — free to use for learning, portfolios, and commercial projects.
 <br/>
 
 
-
-<br/>
-
-⭐ **Star this repo if you found it helpful!**
-
-</div>
