@@ -6,7 +6,7 @@
 <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" />
 <img src="https://img.shields.io/badge/Redux_Toolkit-764ABC?style=for-the-badge&logo=redux&logoColor=white" />
 <img src="https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=reactrouter&logoColor=white" />
-<img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" />
+
 <img src="https://img.shields.io/badge/DummyJSON-API-f97316?style=for-the-badge" />
 <img src="https://img.shields.io/badge/Flaticon-Icons-00B1EA?style=for-the-badge" />
 
@@ -154,8 +154,6 @@ Redux Toolkit manages all global state — data that multiple components across 
 ### 🔴 React Router DOM
 Handles all navigation between pages without reloading the browser. Each URL maps to a different component. The browser address bar updates when navigating but the page never fully reloads — this is called client-side routing.
 
-### ⚡ Vite
-Vite is the build tool and development server. It starts in under one second and updates the browser instantly when you save a file. For production it bundles and optimizes all files into a small output folder.
 
 ### 🟠 DummyJSON API
 All product data is fetched live from [dummyjson.com](https://dummyjson.com) — a free public REST API with no authentication required. It provides 100 products across 28 categories, each with images, prices, ratings, reviews, and stock information.
