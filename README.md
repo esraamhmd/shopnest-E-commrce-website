@@ -21,8 +21,9 @@
 <br/>
 
 
+<img width="1918" height="907" alt="d" src="https://github.com/user-attachments/assets/7a28318b-c721-461f-968d-3144da2dae9e" />
 
-![ShopNest Preview](screenshot.png)
+
 
 </div>
 
@@ -177,109 +178,6 @@ Every style in ShopNest was written by hand. No Bootstrap, no Tailwind, no Mater
 
 ---
 
-## 📁 Project Structure
-
-```
-shopnest/
-├── public/
-├── src/
-│   ├── assets/
-│   │   └── icons/               # PNG and SVG icons from Flaticon
-│   │
-│   ├── components/
-│   │   ├── Header.tsx            # Sticky header: logo, search bar, mega menu, auth
-│   │   ├── Header.css
-│   │   ├── Herobanner.tsx        # Home page: hero slider and product grid
-│   │   ├── Herobanner.css
-│   │   ├── Productdetail.tsx     # Product detail: gallery, reviews, related items
-│   │   ├── Productdetail.css
-│   │   ├── Locationmodal.tsx     # Delivery city picker with OpenStreetMap
-│   │   ├── Locationmodal.css
-│   │   ├── Footer.tsx            # Footer: popular searches, support, links
-│   │   ├── Footer.css
-│   │   ├── Searchpage.tsx        # Search results with sidebar filters and pagination
-│   │   ├── Searchpage.css
-│   │   ├── Cartpage.tsx          # Shopping cart with quantity controls and totals
-│   │   ├── Cartpage.css
-│   │   ├── Favoritespage.tsx     # Wishlist page
-│   │   ├── Favoritespage.css
-│   │   ├── Paymentpage.tsx       # Checkout form with card auto-formatting
-│   │   ├── Paymentpage.css
-│   │   ├── Loginpage.tsx         # Login form
-│   │   ├── Signuppage.tsx        # Signup with password strength meter
-│   │   └── AuthPages.css         # Shared styles for login and signup
-│   │
-│   ├── store/
-│   │   ├── index.ts              # Redux store — combines all slices
-│   │   ├── hooks.ts              # Typed useAppSelector and useAppDispatch
-│   │   └── slices/
-│   │       ├── authSlice.ts      # Login and logout state
-│   │       ├── cartSlice.ts      # Cart items, count, total price
-│   │       ├── favoriteSlice.ts  # Wishlist items
-│   │       ├── locationSlice.ts  # Selected city and coordinates
-│   │       ├── ProductsSlice.ts  # Product list, categories, API status
-│   │       ├── categorySlice.ts  # Active category
-│   │       └── Adsslice.ts       # Promo banner toggle
-│   │
-│   ├── App.tsx                   # Root component — all routes defined here
-│   ├── main.tsx                  # React entry point
-│   └── index.css                 # Global base styles
-│
-├── screenshot.png                # Website preview image
-├── index.html
-├── package.json
-├── tsconfig.json
-├── vite.config.ts
-└── README.md
-```
-
----
-
-## ⚡ Getting Started
-
-### Prerequisites
-
-- **Node.js** v18 or higher → [nodejs.org](https://nodejs.org)
-- **Git** → [git-scm.com](https://git-scm.com)
-
-### Clone and Run
-
-```bash
-# Clone the repository
-git clone https://github.com/YOUR_USERNAME/shopnest.git
-
-# Move into the project folder
-cd shopnest
-
-# Install all dependencies
-npm install
-
-# Start the development server
-npm run dev
-```
-
-Open **[http://localhost:5173](http://localhost:5173)** in your browser.
-
-### Other Commands
-
-```bash
-npm run build      # Build optimized production files
-npm run preview    # Preview the production build locally
-npm run lint       # Run ESLint to check for code issues
-```
-
----
-
-## 🌍 Deploy for Free on Vercel
-
-1. Push your code to GitHub
-2. Go to [vercel.com](https://vercel.com) and sign in with GitHub
-3. Click **Add New Project** and select your repository
-4. Vercel detects Vite automatically — click **Deploy**
-5. Your app is live in about 60 seconds
-
----
-
 ## 📡 API Reference — DummyJSON
 
 All product data is fetched live from **[DummyJSON](https://dummyjson.com)** — free, no API key, no sign-up needed.
@@ -294,13 +192,6 @@ All product data is fetched live from **[DummyJSON](https://dummyjson.com)** —
 
 ---
 
-## 🎨 Icons Credit
-
-All icons come from **[Flaticon](https://flaticon.com)** — the world's largest free icon database.
-
-> Icons by [Flaticon](https://www.flaticon.com) — used with attribution per the free license.
-
----
 
 ## 📄 License
 
@@ -314,7 +205,7 @@ MIT License — free to use for learning, portfolios, and commercial projects.
 
 <br/>
 
-Icons by [Flaticon](https://flaticon.com) &nbsp;•&nbsp; Data by [DummyJSON](https://dummyjson.com) &nbsp;•&nbsp; Map by [OpenStreetMap](https://openstreetmap.org)
+
 
 <br/>
 
