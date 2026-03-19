@@ -13,20 +13,13 @@
 <br/><br/>
 
 > A full-featured, responsive e-commerce web application  
-> built from scratch with **React**, **TypeScript**, **Redux Toolkit**, and **Vite** — no UI libraries used.
+> built from scratch with **React**, **TypeScript**, **Redux Toolkit**d.
 
 <br/>
 
 
 <br/>
 
-<!-- 
-  ADD YOUR SCREENSHOT HERE:
-  1. Take a screenshot of your website (Win + Shift + S)
-  2. Save it as screenshot.png in your project root folder
-  3. Run: git add screenshot.png → git commit -m "Add screenshot" → git push
-  4. Then replace the line below with your actual image
---><img width="1917" height="864" alt="we" src="https://github.com/user-attachments/assets/2d4e7a8c-9f4e-4da2-8255-e5f3af13466b" />
 
 
 ![ShopNest Preview](screenshot.png)
