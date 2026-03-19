@@ -1,4 +1,4 @@
-# 🛍️ ShopNest —  e-commerce web app
+# 🛍️ ShopNest   e-commerce web app
 
 <div align="center">
 
