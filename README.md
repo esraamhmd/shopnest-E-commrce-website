@@ -184,7 +184,7 @@ Every style in ShopNest was written by hand. No Bootstrap, no Tailwind, no Mater
 ---
 ## 🔗 Live  Demo 
 
-https://esraamhmd.github.io/shopnest-E-commrce-website/ 
+https://esraamhmd.github.io/shopnest-E-commrce-website
 
 ## 📡 API Reference — DummyJSON
 
