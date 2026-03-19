@@ -12,9 +12,7 @@
 
 <br/><br/>
 
-> A full-featured, responsive e-commerce web application  
-> built from scratch with **React**, **TypeScript**, **Redux Toolkit**.
-
+### A full-featured, responsive e-commerce web application built from scratch with React, TypeScript, Redux Toolkit, and Vite — no UI libraries used.
 <br/>
 
 
