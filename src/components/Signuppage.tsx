@@ -69,14 +69,18 @@ function SignupPage() {
               <label>First Name</label>
               <input type="text" value={firstName}
                 onChange={(e) => { setFirstName(e.target.value); clearErr("firstName"); }}
-                placeholder="John" className={errors.firstName ? "input-error" : ""}/>
+                placeholder="John"
+                autoComplete="given-name"
+                className={errors.firstName ? "input-error" : ""}/>
               {errors.firstName && <span className="field-error">{errors.firstName}</span>}
             </div>
             <div className="auth-field">
               <label>Last Name</label>
               <input type="text" value={lastName}
                 onChange={(e) => { setLastName(e.target.value); clearErr("lastName"); }}
-                placeholder="Doe" className={errors.lastName ? "input-error" : ""}/>
+                placeholder="Doe"
+                autoComplete="family-name"
+                className={errors.lastName ? "input-error" : ""}/>
               {errors.lastName && <span className="field-error">{errors.lastName}</span>}
             </div>
           </div>
