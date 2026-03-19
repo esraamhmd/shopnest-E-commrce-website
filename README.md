@@ -17,7 +17,6 @@
 
 <br/>
 
-**[🔗 Live Demo](#)** &nbsp;•&nbsp; **[⚡ Quick Start](#-getting-started)**
 
 <br/>
 
