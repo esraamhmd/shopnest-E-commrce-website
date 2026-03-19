@@ -17,7 +17,6 @@
 
 <br/>
 
-**[🔗 Live Demo](#)** &nbsp;•&nbsp; **[⚡ Quick Start](#-getting-started)**
 
 </div>
 
@@ -164,78 +163,6 @@ Every style in ShopNest was written by hand. No Bootstrap, no Tailwind, no Mater
 
 ---
 
-## 📁 Project Structure
-
-```
-shopnest/
-├── public/
-├── src/
-│   ├── assets/
-│   │   └── icons/               # PNG/SVG icons from Flaticon
-│   │       ├── search.png
-│   │       ├── cart.png
-│   │       ├── fav.png
-│   │       ├── carrt.png
-│   │       ├── delete.png
-│   │       ├── fire.png
-│   │       ├── user.png
-│   │       ├── shopping-bag.png
-│   │       ├── down-arrow.png
-│   │       ├── right-arrow.svg
-│   │       ├── arrowback.png
-│   │       ├── pin.png
-│   │       ├── help.png
-│   │       ├── email.png
-│   │       ├── phone.png
-│   │       └── top.png
-│   │
-│   ├── components/
-│   │   ├── Header.tsx            # Sticky header: logo, search bar, mega menu, auth buttons
-│   │   ├── Header.css
-│   │   ├── Herobanner.tsx        # Home page: auto-playing hero slider + product grid
-│   │   ├── Herobanner.css
-│   │   ├── Productdetail.tsx     # Product detail: gallery, reviews, related products
-│   │   ├── Productdetail.css
-│   │   ├── Locationmodal.tsx     # Delivery city picker with OpenStreetMap
-│   │   ├── Locationmodal.css
-│   │   ├── Footer.tsx            # Footer: popular searches, support channels, links
-│   │   ├── Footer.css
-│   │   ├── Searchpage.tsx        # Search results with sidebar filters and pagination
-│   │   ├── Searchpage.css
-│   │   ├── Cartpage.tsx          # Shopping cart with quantity controls and totals
-│   │   ├── Cartpage.css
-│   │   ├── Favoritespage.tsx     # Wishlist page
-│   │   ├── Favoritespage.css
-│   │   ├── Paymentpage.tsx       # Checkout form with card auto-formatting
-│   │   ├── Paymentpage.css
-│   │   ├── Loginpage.tsx         # Login form
-│   │   ├── Signuppage.tsx        # Signup with password strength meter
-│   │   └── AuthPages.css         # Shared styles for login and signup pages
-│   │
-│   ├── store/
-│   │   ├── index.ts              # Redux store — combines all slices
-│   │   ├── hooks.ts              # Typed useAppSelector and useAppDispatch
-│   │   └── slices/
-│   │       ├── authSlice.ts      # Login / logout state
-│   │       ├── cartSlice.ts      # Cart items, count, total price
-│   │       ├── favoriteSlice.ts  # Wishlist items
-│   │       ├── locationSlice.ts  # Selected delivery city and coordinates
-│   │       ├── ProductsSlice.ts  # Product list, categories, API fetch status
-│   │       ├── categorySlice.ts  # Active category
-│   │       └── Adsslice.ts       # Promo banner visibility toggle
-│   │
-│   ├── App.tsx                   # Root component — defines all routes
-│   ├── main.tsx                  # React entry point — mounts app to DOM
-│   └── index.css                 # Global base styles and resets
-│
-├── index.html
-├── package.json
-├── tsconfig.json
-├── vite.config.ts
-└── README.md
-```
-
----
 
 ## 🎬 Demo Video
 
@@ -266,27 +193,6 @@ npm install
 npm run dev
 ```
 
-Open **[http://localhost:5173](http://localhost:5173)** in your browser.
-
-### Other Commands
-
-```bash
-npm run build      # Build optimized production files into /dist
-npm run preview    # Preview the production build locally
-npm run lint       # Run ESLint to check for code issues
-```
-
----
-
-## 🌍 Deploy for Free on Vercel
-
-1. Push your code to GitHub
-2. Go to [vercel.com](https://vercel.com) → sign in with GitHub
-3. Click **Add New Project** → select your `shopnest` repository
-4. Vercel detects Vite automatically → click **Deploy**
-5. Your app is live in about 60 seconds
-
----
 
 ## 📡 API Reference — DummyJSON
 
@@ -302,11 +208,6 @@ All product data is fetched live from **[DummyJSON](https://dummyjson.com)** —
 
 ---
 
-## 🎨 Icons Credit
-
-All icons come from **[Flaticon](https://flaticon.com)** — the world's largest free icon database.
-
-> Icons by [Flaticon](https://www.flaticon.com) — used with attribution per the free license.
 
 ---
 
@@ -322,7 +223,6 @@ MIT License — free to use for learning, portfolios, and commercial projects.
 
 <br/>
 
-Icons by [Flaticon](https://flaticon.com) &nbsp;•&nbsp; Data by [DummyJSON](https://dummyjson.com) &nbsp;•&nbsp; Map by [OpenStreetMap](https://openstreetmap.org)
 
 <br/>
 
