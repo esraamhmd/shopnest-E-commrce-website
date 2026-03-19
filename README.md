@@ -50,7 +50,11 @@ This project was built entirely from scratch with no UI libraries or component f
 
 ## 🎬 Demo Video
 
-https://esraamhmd.github.io/shopnest-E-commrce-website/
+
+
+
+
+https://github.com/user-attachments/assets/65b899ad-9dac-4629-9cce-715c1c2a4a8a
 
 
 
@@ -182,6 +186,7 @@ Every style in ShopNest was written by hand. No Bootstrap, no Tailwind, no Mater
 ---
 ## 🔗 Live  Demo 
 
+https://esraamhmd.github.io/shopnest-E-commrce-website/ 
 
 ## 📡 API Reference — DummyJSON
 
