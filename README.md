@@ -19,6 +19,19 @@
 
 **[🔗 Live Demo](#)** &nbsp;•&nbsp; **[⚡ Quick Start](#-getting-started)**
 
+<br/>
+
+<!-- 
+  ADD YOUR SCREENSHOT HERE:
+  1. Take a screenshot of your website (Win + Shift + S)
+  2. Save it as screenshot.png in your project root folder
+  3. Run: git add screenshot.png → git commit -m "Add screenshot" → git push
+  4. Then replace the line below with your actual image
+--><img width="1917" height="864" alt="we" src="https://github.com/user-attachments/assets/2d4e7a8c-9f4e-4da2-8255-e5f3af13466b" />
+
+
+![ShopNest Preview](screenshot.png)
+
 </div>
 
 ---
@@ -40,6 +53,12 @@ This project was built entirely from scratch with no UI libraries or component f
 | Desktop only | ✅ Fully responsive — mobile, tablet, and desktop |
 | UI library such as Bootstrap | ✅ 100% custom CSS — hand-written from scratch |
 | No real icons | ✅ Professional icons from Flaticon |
+
+---
+
+## 🎬 Demo Video
+
+https://github.com/user-attachments/assets/YOUR_VIDEO_LINK_HERE.mp4
 
 ---
 
@@ -130,7 +149,7 @@ React is the core UI framework. The entire app is built as a tree of reusable co
 TypeScript adds static typing on top of JavaScript. Every component, Redux slice, and function has typed props and return values. This catches bugs before the app runs — for example, if a product price field is accidentally treated as a string, TypeScript throws an error immediately in the editor instead of failing silently at runtime.
 
 ### 🟣 Redux Toolkit
-Redux Toolkit manages all global state — data that multiple components across different pages need to share. The cart, wishlist, user login status, selected city, and product list are all stored in Redux so any component can read or update them without passing props through many layers. The app uses 7 independent slices as shown in the table below.
+Redux Toolkit manages all global state — data that multiple components across different pages need to share. The cart, wishlist, user login status, selected city, and product list are all stored in Redux so any component can read or update them without passing props through many layers.
 
 ### 🔴 React Router DOM
 Handles all navigation between pages without reloading the browser. Each URL maps to a different component. The browser address bar updates when navigating but the page never fully reloads — this is called client-side routing.
@@ -147,7 +166,7 @@ The delivery location picker uses a real embedded OpenStreetMap. It is completel
 ### 🎨 Flaticon
 All UI icons — search, cart, heart, user, location pin, arrow, trash, fire, phone, email, and more — come from [Flaticon](https://flaticon.com), the world's largest free icon library. Icons are downloaded as PNG files and imported directly into components.
 
-### 🎨 Custom CSS
+### 🖌️ Custom CSS
 Every style in ShopNest was written by hand. No Bootstrap, no Tailwind, no Material UI — just pure CSS with flexbox, grid, media queries, transitions, and animations.
 
 ---
@@ -214,18 +233,13 @@ shopnest/
 │   ├── main.tsx                  # React entry point
 │   └── index.css                 # Global base styles
 │
+├── screenshot.png                # Website preview image
 ├── index.html
 ├── package.json
 ├── tsconfig.json
 ├── vite.config.ts
 └── README.md
 ```
-
----
-
-## 🎬 Demo Video
-
-https://github.com/user-attachments/assets/YOUR_VIDEO_LINK_HERE.mp4
 
 ---
 
