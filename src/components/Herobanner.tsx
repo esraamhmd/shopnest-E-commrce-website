@@ -38,7 +38,18 @@ function HeroBanner() {
   const timerRef  = useRef<ReturnType<typeof setInterval>|null>(null);
   const promoRef  = useRef<ReturnType<typeof setInterval>|null>(null);
 
-  useEffect(() => { dispatch(fetchProducts()); }, [dispatch]);
+  // Always fetch products on mount — retries if API failed previously
+  useEffect(() => {
+    dispatch(fetchProducts());
+  }, [dispatch]);
+
+  // Auto-retry if fetch fails
+  useEffect(() => {
+    if (status === "failed") {
+      const timer = setTimeout(() => dispatch(fetchProducts()), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [status, dispatch]);
 
   const slidesLengthRef = useRef(SLIDES.length);
   slidesLengthRef.current = SLIDES.length;

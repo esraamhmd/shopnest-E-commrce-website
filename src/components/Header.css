@@ -183,9 +183,9 @@
   .container { padding: 0 16px; }
   .header-content { gap: 10px; }
   .logo h1 { font-size: 20px; }
-  
+  /* Hide delivery on tablet */
   .delivery { display: none; }
-  
+  /* Smaller auth buttons */
   .signin-btn span, .orders-btn span { display: none; }
   .signin-btn { padding: 7px 10px; }
   .orders-btn { padding: 7px 10px; }
@@ -195,7 +195,6 @@
 /* Mobile */
 @media(max-width:600px) {
   .container { padding: 0 12px; }
- 
   .header-content {
     grid-template-columns: auto 1fr;
     grid-template-rows: auto auto;
@@ -206,15 +205,28 @@
   .search-section{ grid-column: 1 / -1; grid-row: 2; }
   .logo h1 { font-size: 18px; }
   .logo-icon { width: 24px; height: 24px; }
- 
   .cat-select-wrapper { display: none; }
   .category-search-container { border-radius: 10px; }
   .search-button { border-radius: 0 10px 10px 0; }
- 
   .mega-menu { display: none; }
   .auth-section { gap: 6px; }
-  
-  .cat-nav-item { padding: 8px 10px; font-size: 12px; }
+  /* Category nav - ALL items visible, horizontal scroll */
+  .cat-nav-bar { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .cat-nav-inner { 
+    display: flex; 
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 2px;
+  }
+  .cat-nav-inner::-webkit-scrollbar { display: none; }
+  .cat-nav-item { 
+    padding: 8px 12px; 
+    font-size: 12px; 
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
 }
 
 /* Very small mobile */
