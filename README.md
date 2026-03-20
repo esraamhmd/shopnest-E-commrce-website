@@ -203,7 +203,7 @@ All product data is fetched live from **[DummyJSON](https://dummyjson.com)** —
 
 ## 📄 License
 
-MIT License — free to use for learning.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
 ---
 
