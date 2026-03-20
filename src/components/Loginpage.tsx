@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useAppDispatch } from "../store/hooks";
 import { login } from "../store/slices/authSlice";
-import "./AuthPages.css";
+import "./Authpages.css";
 
 function LoginPage() {
   const navigate = useNavigate();

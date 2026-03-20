@@ -4,7 +4,7 @@ import { removeFromFavorites } from "../store/slices/favoriteSlice";
 import { addToCart } from "../store/slices/cartSlice";
 import deleteIcon  from "../assets/icons/delete.png";
 import cartIconImg from "../assets/icons/carrt.png";
-import "./FavoritesPage.css";
+import "./Favoritespage.css";
 
 function FavoritesPage() {
   const navigate = useNavigate();

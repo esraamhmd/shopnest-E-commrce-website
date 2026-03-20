@@ -6,7 +6,7 @@ import { addToCart } from "../store/slices/cartSlice";
 import { toggleFavorite } from "../store/slices/favoriteSlice";
 import searchIcon  from "../assets/icons/search.png";
 import cartIconImg from "../assets/icons/carrt.png";
-import "./SearchPage.css";
+import "./Searchpage.css";
 
 const POPULAR_SEARCHES = [
   "Laptop","Smartphone","Headphones","Watch","Perfume","Sneakers",
@@ -40,23 +40,21 @@ function SearchPage() {
   const [localSearch,  setLocalSearch]  = useState(query);
   const PER_PAGE = 12;
 
-  // Load ALL 100 products once on mount — client-side filter works on these
+ 
   useEffect(() => {
     dispatch(fetchProducts());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+   
   }, []);
 
-  // When URL params change — only reset page & sync local search
-  // Do NOT re-fetch products when there's a query — client-side filter handles it
+
   useEffect(() => {
     setCurrentPage(1);
     setLocalSearch(query || labelParam || "");
-    // Only fetch category-specific products when browsing a category (no text query)
+
     if (catParam && !query) {
       dispatch(fetchProductsByCategory(catParam));
     }
-    // When there IS a query: keep all 100 products in store, let client filter run
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+  
   }, [query, catParam]);
 
   function handleSearchSubmit(e: React.FormEvent) {

@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from "react";
-import "./CategoryNav.css";
+import "./Categorynav.css";
 
 // Redux
 import { useAppDispatch, useAppSelector } from "../store/hooks";

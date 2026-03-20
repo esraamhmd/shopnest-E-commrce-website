@@ -3,7 +3,7 @@ import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { removeFromCart, updateQuantity } from "../store/slices/cartSlice";
 import deleteIcon   from "../assets/icons/delete.png";
 import arrowbackIcon from "../assets/icons/arrowback.png";
-import "./CartPage.css";
+import "./Cartpage.css";
 
 function CartPage() {
   const navigate = useNavigate();
