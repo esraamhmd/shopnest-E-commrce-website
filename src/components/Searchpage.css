@@ -1,17 +1,15 @@
-/* ═══════════════════════════════════════
-   SEARCH PAGE — full rewrite
-═══════════════════════════════════════ */
+
 .search-page {
   min-height: 100vh;
   background: #f9fafb;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-/* ── LAYOUT: sidebar LEFT in EN, sidebar RIGHT in AR ── */
+
 .search-layout {
   max-width: 1440px;
   margin: 0 auto;
-  display: flex;              /* flex so order works */
+  display: flex;             
   flex-direction: row;
   gap: 20px;
   padding: 20px 40px 60px;
@@ -19,7 +17,6 @@
 }
 
 
-/* ── SIDEBAR ── */
 .search-sidebar {
   width: 260px;
   flex-shrink: 0;
@@ -119,11 +116,10 @@
 .color-dot:hover { transform: scale(1.15); }
 .color-chip input:checked + .color-dot { outline: 2px solid #f97316; outline-offset: 2px; }
 
-/* ── RESULTS ── */
+
 .search-results { flex: 1; min-width: 0; }
 
-/* Search bar - input LEFT, button RIGHT */
-/* Search bar - ALWAYS: input LEFT, orange button RIGHT */
+
 .search-results-bar {
   display: flex;
   align-items: center;
@@ -132,7 +128,7 @@
   overflow: hidden;
   margin-bottom: 20px;
   background: white;
-  direction: ltr;  /* force LTR so button ALWAYS on right */
+  direction: ltr; 
   height: 46px;
 }
 .search-results-input {
@@ -148,7 +144,7 @@
   min-width: 0;
 }
 .search-results-input::placeholder { color: #9ca3af; }
-/* Button always stays on RIGHT end */
+
 .search-results-btn {
   padding: 0 20px;
   background: #f97316;
@@ -165,7 +161,7 @@
 .search-results-btn:hover { background: #ea580c; }
 .search-results-btn img { width: 20px; height: 20px; filter: brightness(0) invert(1); }
 
-/* Results header */
+
 .results-header {
   display: flex; align-items: center; justify-content: space-between;
   margin-bottom: 20px; flex-wrap: wrap; gap: 12px;
@@ -266,7 +262,7 @@
 .page-btn:disabled { opacity:0.4; cursor:not-allowed; }
 .page-ellipsis { color:#9ca3af; font-size:14px; padding:0 4px; }
 
-/* Popular searches */
+
 .popular-searches { background: white; border-radius: 14px; padding: 24px; border: 1px solid #f3f4f6; }
 .popular-searches h3 { font-size: 15px; font-weight: 800; color: #1a1a1a; margin-bottom: 14px; }
 .popular-tags { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -276,7 +272,6 @@
 }
 .popular-tag:hover { background: #f97316; color: white; border-color: #f97316; }
 
-/* Cart toast */
 .cart-alert-toast {
   position:fixed; top:80px; left:50%; transform:translateX(-50%); z-index:999;
   background:#1a1a1a; color:white; padding:12px 20px; border-radius:12px;
@@ -288,7 +283,7 @@
 .cart-alert-view { background:#f97316; color:white; border:none; border-radius:8px; padding:5px 12px; font-size:13px; font-weight:700; cursor:pointer; }
 .cart-alert-view:hover { background:#ea580c; }
 
-/* ── Responsive ── */
+/* Responsive */
 @media(max-width:1200px) { .search-grid{grid-template-columns:repeat(2,1fr)} }
 @media(max-width:900px) {
   .search-layout { flex-direction:column !important; padding:16px 20px 40px; }
@@ -300,11 +295,7 @@
   .search-grid { grid-template-columns:1fr; }
 }
 
-/* Search bar stays LTR even in Arabic - button must stay RIGHT */
 
-/* ════════════════════════════
-   SEARCH PAGE RESPONSIVE
-════════════════════════════ */
 @media(max-width:900px) {
   .search-layout { flex-direction: column !important; padding: 12px 16px 40px; gap: 12px; }
   .search-sidebar { width: 100%; position: static; }

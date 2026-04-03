@@ -99,7 +99,7 @@ function Footer() {
       {/* Bottom */}
       <div className="footer-bottom">
         <div className="footer-container">
-          <p className="footer-copyright">© 2025 ShopNest. All rights reserved.</p>
+          <p className="footer-copyright"> 2025 ShopNest. All rights reserved.</p>
         </div>
       </div>
 

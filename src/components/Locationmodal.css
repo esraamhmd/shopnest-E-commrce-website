@@ -33,16 +33,14 @@
 .location-close:hover { background:#e5e7eb; }
 .location-close img { width:14px; height:14px; object-fit:contain; }
 
-/* GPS/search removed */
 
-/* MAP */
 .map-container {
   position:relative; height:260px; overflow:hidden; flex-shrink:0;
   background:#e8edf2;
 }
 .map-iframe {
   width:100%; height:100%; border:none; display:block;
-  pointer-events:none; /* prevent iframe interaction so user can scroll */
+  pointer-events:none; 
 }
 .map-overlay-pin {
   position:absolute; top:50%; left:50%; transform:translate(-50%,-100%);
@@ -70,7 +68,7 @@
 }
 .map-zoom-btns button:hover { background:#f3f4f6; }
 
-/* Current location row */
+
 .current-location-row {
   display:flex; align-items:center; gap:12px;
   padding:14px 16px; border-top:1px solid #f3f4f6;
@@ -89,7 +87,7 @@
 }
 .location-confirm-btn:hover { background:#1d4ed8; }
 
-/* City selector */
+
 .city-selector-row {
   display:flex; align-items:center; gap:10px;
   padding:12px 16px; flex-shrink:0;

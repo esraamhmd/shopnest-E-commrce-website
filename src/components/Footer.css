@@ -1,13 +1,11 @@
-/* ═══════════════════════════════════════
-   FOOTER
-═══════════════════════════════════════ */
+
 .footer {
   background: white;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 .footer-container { max-width: 1440px; margin: 0 auto; padding: 0 40px; }
 
-/* ── Popular Searches ── */
+
 .footer-popular {
   padding: 24px 0 20px;
   background: #fafafa;
@@ -25,7 +23,7 @@
 }
 .popular-tag:hover { background: #f97316; color: white; border-color: #f97316; }
 
-/* ── Help bar ── */
+
 .footer-help {
   background: #f3f4f6;
   padding: 32px 0;
@@ -40,12 +38,12 @@
   gap: 24px;
 }
 
-/* Help text — always LEFT */
+
 .help-text { flex-shrink: 0; }
 .help-text h3 { font-size: 20px; font-weight: 900; color: #1a1a1a; margin-bottom: 4px; }
 .help-text p  { font-size: 13px; color: #6b7280; }
 
-/* Channels — always RIGHT */
+
 .help-channels { display: flex; gap: 48px; flex-wrap: wrap; }
 .help-channel   { display: flex; align-items: center; gap: 14px; }
 .help-icon-img  { width: 30px; height: 30px; object-fit: contain; flex-shrink: 0; }
@@ -56,7 +54,7 @@
 }
 .help-channel-value { font-size: 15px; font-weight: 800; color: #1a1a1a; }
 
-/* ── Links grid ── */
+
 .footer-links { padding: 44px 0 36px; }
 .footer-links-grid {
   display: grid;
@@ -74,11 +72,11 @@
 }
 .footer-col a:hover { color: #f97316; }
 
-/* ── Bottom ── */
+
 .footer-bottom { background: #1a1a1a; padding: 16px 0; }
 .footer-copyright { font-size: 13px; color: #9ca3af; text-align: center; }
 
-/* ── Scroll top ── */
+
 .scroll-top-btn {
   position: fixed; bottom: 28px; right: 28px; z-index: 99;
   width: 44px; height: 44px; background: #1a1a1a;
@@ -89,11 +87,7 @@
 .scroll-top-btn:hover { background: #f97316; transform: translateY(-2px); }
 .top-icon { width: 18px; height: 18px; filter: brightness(0) invert(1); }
 
-/* ═══════════════════════════════════════
-   RTL OVERRIDES
-═══════════════════════════════════════ */
 
-/* Popular */
 .footer.rtl .footer-popular-title { text-align: right; }
 .footer.rtl .popular-tags { flex-direction: row-reverse; }
 
@@ -104,11 +98,11 @@
 .footer.rtl .help-channel { flex-direction: row-reverse; }
 .footer.rtl .help-channel-info { text-align: right; align-items: flex-end; }
 
-/* Links grid */
+
 .footer.rtl .footer-links-grid { direction: rtl; }
 .footer.rtl .footer-col { text-align: right; }
 
-/* ── Responsive ── */
+/*  Responsive */
 @media(max-width:1280px) {
   .footer-links-grid { grid-template-columns: repeat(4, 1fr); }
 }

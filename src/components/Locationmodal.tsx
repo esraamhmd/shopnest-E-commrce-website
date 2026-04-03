@@ -4,7 +4,6 @@ import { setCoords } from "../store/slices/locationSlice";
 import "./Locationmodal.css";
 import pinIcon      from "../assets/icons/pin.png";
 import exitIcon     from "../assets/icons/exit-button.png";
-import arrowbackIcon from "../assets/icons/arrowback.png";
 
 const CITIES = [
   { name: "Cairo",           nameAR: "القاهرة",      lat: 30.0444, lng: 31.2357 },
@@ -34,7 +33,7 @@ function LocationModal({ onClose }: Props) {
   const [selectedCity, setSelectedCity] = useState(defaultCity);
   const [confirmed, setConfirmed] = useState(false);
 
-  // Real OSM map URL centered on selected city
+  
   const mapSrc = `https://www.openstreetmap.org/export/embed.html?bbox=${selectedCity.lng-0.05},${selectedCity.lat-0.04},${selectedCity.lng+0.05},${selectedCity.lat+0.04}&layer=mapnik&marker=${selectedCity.lat},${selectedCity.lng}`;
 
   function handleCityChange(cityName: string) {
@@ -56,16 +55,13 @@ function LocationModal({ onClose }: Props) {
 
         {/* Header */}
         <div className="location-modal-header">
-          <button className="location-back" onClick={onClose}>
-            <img src={arrowbackIcon} alt="back"/>
-          </button>
-          <h2>{"Add new address"}</h2>
+<h2>{"Add new address"}</h2>
           <button className="location-close" onClick={onClose}>
             <img src={exitIcon} alt="close"/>
           </button>
         </div>
 
-        {/* Real OSM Map */}
+        {/* Map */}
         <div className="map-container">
           <iframe
             title="delivery-map"
@@ -77,10 +73,7 @@ function LocationModal({ onClose }: Props) {
             <div className="map-pin-tooltip">{"Your order will be delivered here"}</div>
             <img src={pinIcon} alt="pin" className="map-pin-img"/>
           </div>
-          <div className="map-zoom-btns">
-            <button>+</button>
-            <button>−</button>
-          </div>
+  
         </div>
 
         {/* Current location row */}

@@ -70,7 +70,7 @@ const MEGA_MENUS: Record<string, {
   },
 };
 
-// All categories for the dropdown panel (like Amazon)
+
 const ALL_CATEGORIES = [
   { label: "All Categories", slug: "" },
   { label: "Electronics", slug: "laptops" },
@@ -112,7 +112,7 @@ const NAV_ITEMS = [
   { label: "Supermarket", slug: "groceries", key: "" },
   { label: "Automotive", slug: "vehicle", key: "" },
   { label: "Sports", slug: "sports-accessories", key: "" },
-  { label: "Books", slug: "Books", key: "" },
+  
 ];
 
 function Header() {
@@ -136,13 +136,13 @@ function Header() {
   const megaTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const catRef    = useRef<HTMLDivElement>(null);
 
-  // Fetch categories on mount
+  // Fetch categories 
   useEffect(() => {
     dispatch(fetchCategories());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    
   }, []);
 
-  // Close category dropdown on outside click
+ 
   useEffect(() => {
     function handleClick(e: MouseEvent) {
       if (catRef.current && !catRef.current.contains(e.target as Node)) {
@@ -164,7 +164,7 @@ function Header() {
       navigate(`/search?category=${encodeURIComponent(catSlug)}&label=${encodeURIComponent(selectedCategory.label)}`);
       return;
     }
-    // Search with optional category context
+   
     dispatch(searchProducts(q.trim()));
     navigate(`/search?q=${encodeURIComponent(q.trim())}${catSlug ? `&category=${catSlug}` : ""}`);
   }
@@ -184,7 +184,7 @@ function Header() {
   function handleCategorySelect(cat: typeof ALL_CATEGORIES[0]) {
     setSelectedCategory({ label: cat.label, slug: cat.slug });
     setShowCatDropdown(false);
-    // If category selected and no query, immediately browse that category
+   
     if (!searchQuery.trim()) {
       if (!cat.slug) {
         dispatch(fetchProducts());
@@ -215,7 +215,7 @@ function Header() {
 
   const catDisplayLabel = selectedCategory.label;
 
-  // Build category list combining API categories + our static list
+
   const apiCategories = categories.map((slug) => ({
     label: slug.split("-").map((w) => w.charAt(0).toUpperCase()+w.slice(1)).join(" "),
     slug,
@@ -241,7 +241,7 @@ function Header() {
               {/* SEARCH */}
               <div className="search-section">
                 <div className="category-search-container">
-                  {/* Category dropdown - outside form so overflow doesn't clip */}
+
                   <div className="cat-select-wrapper" ref={catRef}>
                     <button
                       type="button"
@@ -275,7 +275,7 @@ function Header() {
                     )}
                   </div>
 
-                  {/* Search input + button as a form */}
+                
                   <form className="search-form-inner" onSubmit={handleSearch} style={{flex:1, display:"flex", alignItems:"center"}}>
                     <div className="search-container">
                       <input

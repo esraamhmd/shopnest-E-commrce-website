@@ -13,7 +13,7 @@
   max-width: 460px;
   box-shadow: 0 20px 60px rgba(0,0,0,0.08);
   border: 1px solid #f3f4f6;
-  /* Critical: prevent children from overflowing */
+
   overflow: hidden;
   box-sizing: border-box;
 }
@@ -25,10 +25,10 @@
 
 .auth-form { display: flex; flex-direction: column; gap: 16px; }
 
-/* Row with two fields side by side */
+
 .auth-row {
   display: grid;
-  grid-template-columns: minmax(0,1fr) minmax(0,1fr); /* minmax(0) forces equal width */
+  grid-template-columns: minmax(0,1fr) minmax(0,1fr); 
   gap: 12px;
   width: 100%;
 }
@@ -37,7 +37,7 @@
   display: flex;
   flex-direction: column;
   gap: 6px;
-  min-width: 0;       /* allow field to shrink — THIS is the key fix */
+  min-width: 0;      
   width: 100%;
 }
 .auth-field label { font-size: 13px; font-weight: 600; color: #374151; }
@@ -51,7 +51,7 @@
   transition: border-color 0.2s;
   background: #fafafa;
   width: 100%;
-  box-sizing: border-box;  /* include padding in width */
+  box-sizing: border-box;  
   min-width: 0;
 }
 .auth-field input:focus { border-color: #f97316; background: white; }
@@ -77,7 +77,7 @@
 .auth-switch a { color: #f97316; font-weight: 600; text-decoration: none; }
 .auth-switch a:hover { text-decoration: underline; }
 
-/* ── Validation ── */
+
 .input-error   { border-color: #ef4444 !important; background: #fef2f2 !important; }
 .input-success { border-color: #22c55e !important; background: #f0fdf4 !important; }
 .field-error {
@@ -89,7 +89,7 @@
 .required { color: #ef4444; font-size: 13px; }
 .checkbox-error { color: #ef4444; }
 
-/* Password strength */
+
 .password-strength { display: flex; align-items: center; gap: 8px; margin-top: 6px; }
 .strength-bar { flex: 1; height: 4px; border-radius: 4px; transition: all 0.3s; }
 .strength-bar.weak   { background: #ef4444; }
@@ -97,11 +97,11 @@
 .strength-bar.strong { background: #22c55e; }
 .strength-label { font-size: 12px; font-weight: 600; color: #6b7280; white-space: nowrap; }
 
-/* ── Responsive ── */
+/* Responsive*/
 @media(max-width:600px) {
   .auth-page { padding: 12px; align-items: flex-start; padding-top: 24px; }
   .auth-card { padding: 24px 16px; border-radius: 16px; }
-  /* Stack first/last name on mobile */
+
   .auth-row { grid-template-columns: 1fr; gap: 16px; }
   .auth-title { font-size: 20px; }
   .auth-brand-name { font-size: 24px; }

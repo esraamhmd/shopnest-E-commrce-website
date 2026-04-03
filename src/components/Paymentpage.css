@@ -230,7 +230,6 @@
   cursor: pointer;
   transition: background 0.2s;
 }
-
 .order-home-btn:hover { background-color: #ea580c; }
 
 @media (max-width: 900px) {
@@ -243,7 +242,7 @@
   .payment-methods { flex-direction: column; }
 }
 
-/* ── Validation styles ── */
+
 .payment-field .input-error {
   border-color: #ef4444 !important;
   background: #fef2f2 !important;

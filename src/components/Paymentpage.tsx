@@ -32,12 +32,12 @@ function PaymentPage() {
     setErrors((prev) => ({ ...prev, [field]: "" }));
   }
 
-  // Format card number with spaces
+  
   function formatCardNum(val: string) {
     return val.replace(/\D/g,"").slice(0,16).replace(/(.{4})/g,"$1 ").trim();
   }
 
-  // Format expiry MM/YY
+  
   function formatExpiry(val: string) {
     const clean = val.replace(/\D/g,"").slice(0,4);
     if (clean.length >= 3) return clean.slice(0,2)+"/"+clean.slice(2);
@@ -47,7 +47,7 @@ function PaymentPage() {
   function validate() {
     const e: Record<string, string> = {};
 
-    if (!firstName.trim()) e.firstName = "First name is required" // : "First name is required";
+    if (!firstName.trim()) e.firstName = "First name is required" 
     if (!lastName.trim())  e.lastName  = "Last name is required";
     if (!address.trim())   e.address   = "Address is required";
     if (!city.trim())      e.city      = "City is required";

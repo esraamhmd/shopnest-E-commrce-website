@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 
-// ── Types ────────────────────────────────────────────────
+
 interface User {
   name: string;
   email: string;
@@ -13,13 +13,11 @@ interface AuthState {
   user: User | null;
 }
 
-// ── Initial state ────────────────────────────────────────
 const initialState: AuthState = {
   isLoggedIn: false,
   user: null,
 };
 
-// ── Slice ────────────────────────────────────────────────
 const authSlice = createSlice({
   name: "auth",
   initialState,

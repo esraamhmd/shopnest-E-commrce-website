@@ -33,28 +33,31 @@ function SearchPage() {
   const [maxPrice,     setMaxPrice]     = useState("");
   const [minRating,    setMinRating]    = useState(0);
   const [selBrand,     setSelBrand]     = useState("");
-  const [onlyDeals,    setOnlyDeals]    = useState(false);
+  const [selSize,      setSelSize]      = useState("");
   const [openSections, setOpenSections] = useState<string[]>(["category","price","rating","brand"]);
   const [currentPage,  setCurrentPage]  = useState(1);
   const [cartAlert,    setCartAlert]    = useState<string | null>(null);
   const [localSearch,  setLocalSearch]  = useState(query);
   const PER_PAGE = 12;
 
- 
+  
   useEffect(() => {
     dispatch(fetchProducts());
-   
+
   }, []);
 
 
   useEffect(() => {
     setCurrentPage(1);
     setLocalSearch(query || labelParam || "");
+    if (catParam) {
 
-    if (catParam && !query) {
       dispatch(fetchProductsByCategory(catParam));
-    }
+    } else if (!query) {
   
+      dispatch(fetchProducts());
+    }
+   
   }, [query, catParam]);
 
   function handleSearchSubmit(e: React.FormEvent) {
@@ -70,7 +73,7 @@ function SearchPage() {
   function isFav(id: number) { return favItems.some((f) => f.id === id); }
   function clearFilters() {
     setSelCategory(""); setMinPrice(""); setMaxPrice("");
-    setMinRating(0); setSelBrand(""); setOnlyDeals(false); setSortBy("relevance");
+    setMinRating(0); setSelBrand(""); setSelSize(""); setSortBy("relevance");
   }
 
   function handleAddToCart(product: typeof allProducts[0]) {
@@ -85,13 +88,10 @@ function SearchPage() {
 
   const brands = [...new Set(allProducts.map((p) => p.brand).filter(Boolean))].slice(0, 20);
 
-  // ── Filter pipeline ──────────────────────────────────────
-  // Step 1: valid products only
+
   let results = allProducts.filter((p) => p.thumbnail && p.title && p.price > 0);
 
-  // Step 2: client-side text search
-  // Short queries (1-2 chars): search title + category + brand ONLY (not description)
-  // Longer queries (3+ chars): search all fields including description + tags
+
   if (query) {
     const q = query.toLowerCase();
     const isShort = q.length <= 2;
@@ -100,25 +100,26 @@ function SearchPage() {
       const inCategory = p.category?.toLowerCase().includes(q) ?? false;
       const inBrand    = p.brand?.toLowerCase().includes(q) ?? false;
       if (isShort) {
-        // Short query: only match title, category, brand — NOT description/tags
+       
         return inTitle || inCategory || inBrand;
       }
-      // Longer query: match all fields
+     
       const inDesc = p.description?.toLowerCase().includes(q) ?? false;
       const inTags = p.tags?.some((tag) => tag.toLowerCase().includes(q)) ?? false;
       return inTitle || inCategory || inBrand || inDesc || inTags;
     });
   }
 
-  // Step 3: sidebar filters
+
+  if (catParam) results = results.filter((p) => p.category === catParam);
+
+
   if (selCategory) results = results.filter((p) => p.category === selCategory);
   if (minPrice)    results = results.filter((p) => p.price >= Number(minPrice));
   if (maxPrice)    results = results.filter((p) => p.price <= Number(maxPrice));
   if (minRating)   results = results.filter((p) => p.rating >= minRating);
   if (selBrand)    results = results.filter((p) => p.brand === selBrand);
-  if (onlyDeals)   results = results.filter((p) => p.discountPercentage > 10);
 
-  // Step 4: sort
   if (sortBy === "price-asc")  results = [...results].sort((a,b) => a.price - b.price);
   if (sortBy === "price-desc") results = [...results].sort((a,b) => b.price - a.price);
   if (sortBy === "rating")     results = [...results].sort((a,b) => b.rating - a.rating);
@@ -153,20 +154,6 @@ function SearchPage() {
           <div className="sidebar-header">
             <h2>{"Filters"}</h2>
             <button className="clear-all-btn" onClick={clearFilters}>{"Clear All"}</button>
-          </div>
-
-          {/* Fulfillment */}
-          <div className="filter-group">
-            <button className="filter-group-header" onClick={() => toggleSection("fulfillment")}>
-              <span>{"Fulfillment"}</span>
-              <span className={`filter-chevron ${openSections.includes("fulfillment")?"open":""}`}>›</span>
-            </button>
-            {openSections.includes("fulfillment") && (
-              <div className="filter-options">
-                <label className="filter-option"><input type="checkbox"/><span>{"Express Delivery"}</span></label>
-                <label className="filter-option"><input type="checkbox"/><span>{"Free Shipping"}</span></label>
-              </div>
-            )}
           </div>
 
           {/* Category */}
@@ -226,30 +213,6 @@ function SearchPage() {
             )}
           </div>
 
-          {/* Deals */}
-          <div className="filter-group">
-            <button className="filter-group-header" onClick={() => toggleSection("deals")}>
-              <span>{"Deals"}</span>
-              <span className={`filter-chevron ${openSections.includes("deals")?"open":""}`}>›</span>
-            </button>
-            {openSections.includes("deals") && (
-              <div className="filter-options">
-                <label className="filter-option">
-                  <input type="checkbox" checked={onlyDeals} onChange={(e) => setOnlyDeals(e.target.checked)}/>
-                  <span>{"On Sale (>10% off)"}</span>
-                </label>
-              </div>
-            )}
-          </div>
-
-          {/* New Arrivals */}
-          <div className="filter-group">
-            <button className="filter-group-header" onClick={() => toggleSection("new")}>
-              <span>{"New Arrivals"}</span>
-              <span className={`filter-chevron ${openSections.includes("new")?"open":""}`}>›</span>
-            </button>
-          </div>
-
           {/* Rating */}
           <div className="filter-group">
             <button className="filter-group-header" onClick={() => toggleSection("rating")}>
@@ -280,65 +243,20 @@ function SearchPage() {
             {openSections.includes("size") && (
               <div className="filter-options filter-sizes">
                 {["XS","S","M","L","XL","XXL"].map((s) => (
-                  <label key={s} className="size-chip"><input type="checkbox"/><span>{s}</span></label>
-                ))}
-              </div>
-            )}
-          </div>
-
-          {/* Pattern */}
-          <div className="filter-group">
-            <button className="filter-group-header" onClick={() => toggleSection("pattern")}>
-              <span>{"Pattern"}</span>
-              <span className={`filter-chevron ${openSections.includes("pattern")?"open":""}`}>›</span>
-            </button>
-            {openSections.includes("pattern") && (
-              <div className="filter-options">
-                {["Solid","Striped","Floral","Checked","Printed"].map((p) => (
-                  <label key={p} className="filter-option"><input type="checkbox"/><span>{p}</span></label>
-                ))}
-              </div>
-            )}
-          </div>
-
-          {/* Colour */}
-          <div className="filter-group">
-            <button className="filter-group-header" onClick={() => toggleSection("colour")}>
-              <span>{"Colour"}</span>
-              <span className={`filter-chevron ${openSections.includes("colour")?"open":""}`}>›</span>
-            </button>
-            {openSections.includes("colour") && (
-              <div className="filter-colors">
-                {[{c:"#1a1a1a",n:"Black"},{c:"#ffffff",n:"White"},{c:"#ef4444",n:"Red"},{c:"#3b82f6",n:"Blue"},{c:"#22c55e",n:"Green"},{c:"#f59e0b",n:"Yellow"},{c:"#f97316",n:"Orange"},{c:"#a855f7",n:"Purple"}].map(({c,n}) => (
-                  <label key={n} className="color-chip" title={n}>
-                    <input type="checkbox"/>
-                    <span className="color-dot" style={{background:c, border:c==="#ffffff"?"1px solid #e5e7eb":"none"}}/>
+                  <label key={s} className="size-chip">
+                    <input type="radio" name="size" checked={selSize===s} onChange={() => setSelSize(selSize===s?"":s)}/>
+                    <span>{s}</span>
                   </label>
-                ))}
-              </div>
-            )}
-          </div>
-
-          {/* Pack Quantity */}
-          <div className="filter-group">
-            <button className="filter-group-header" onClick={() => toggleSection("pack")}>
-              <span>{"Pack Quantity"}</span>
-              <span className={`filter-chevron ${openSections.includes("pack")?"open":""}`}>›</span>
-            </button>
-            {openSections.includes("pack") && (
-              <div className="filter-options">
-                {["1 Piece","2 Pieces","3 Pieces","Set of 4+"].map((p) => (
-                  <label key={p} className="filter-option"><input type="checkbox"/><span>{p}</span></label>
                 ))}
               </div>
             )}
           </div>
         </aside>
 
-        {/* ── RESULTS ── */}
+        {/*  RESULTS */}
         <main className="search-results">
 
-          {/* Search bar - input first, button RIGHT like Amazon */}
+      
           <form className="search-results-bar" onSubmit={handleSearchSubmit}>
             <input
               type="text"

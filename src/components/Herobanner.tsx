@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Herobanner.css";
 import fireIcon  from "../assets/icons/fire.png";
-import rightArrow from "../assets/icons/right-arrow.png";
+import rightArrow from "../assets/icons/right-arrow.svg";
 import cartIconImg from "../assets/icons/carrt.png";
 
 import { useAppDispatch, useAppSelector } from "../store/hooks";
@@ -38,12 +38,12 @@ function HeroBanner() {
   const timerRef  = useRef<ReturnType<typeof setInterval>|null>(null);
   const promoRef  = useRef<ReturnType<typeof setInterval>|null>(null);
 
-  // Always fetch products on mount — retries if API failed previously
+ 
   useEffect(() => {
     dispatch(fetchProducts());
   }, [dispatch]);
 
-  // Auto-retry if fetch fails
+  
   useEffect(() => {
     if (status === "failed") {
       const timer = setTimeout(() => dispatch(fetchProducts()), 3000);
@@ -66,7 +66,7 @@ function HeroBanner() {
     );
   }).current;
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+
   useEffect(() => { startAutoPlay(); return stopAutoPlay; }, []);
 
   useEffect(() => {
@@ -96,7 +96,7 @@ function HeroBanner() {
     setTimeout(() => setCartAlert(null), 2500);
   }
 
-  // Filter out products with no image or missing essential data
+ 
   const validProducts = products.filter(
     (p) => p.thumbnail && p.title && p.price > 0
   );
@@ -197,7 +197,7 @@ function HeroBanner() {
                 const badge         = getBadge(product.discountPercentage);
                 const originalPrice = +(product.price/(1-product.discountPercentage/100)).toFixed(2);
                 const fav           = isFav(product.id);
-                // Skip products with broken images handled via onError
+              
 
                 return (
                   <div key={product.id} className="product-card">
@@ -218,7 +218,7 @@ function HeroBanner() {
                           alt={product.title}
                           loading="lazy"
                           onError={(e) => {
-                            // Hide entire card if image fails to load
+                        
                             const card = (e.target as HTMLElement).closest('.product-card') as HTMLElement;
                             if (card) card.style.display = 'none';
                           }}
@@ -258,9 +258,7 @@ function HeroBanner() {
         )}
       </div>
 
-      {!adsVisible && (
-        <button className="scroll-top-fab" onClick={() => window.scrollTo({top:0,behavior:"smooth"})}><img src={rightArrow} alt="top" className="fab-arrow"/></button>
-      )}
+
     </section>
   );
 }
