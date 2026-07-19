@@ -306,9 +306,10 @@ function SearchPage() {
             <div className="no-results">
               <p>{"No results found"}</p>
               <p className="no-results-sub">
-                Some products may not load due to temporary issues with the DummyJSON API.
+                Some products may not load due to a temporary issue with our service. Please try again later.
+
                 <br />
-               قد لا يتم تحميل بعض المنتجات بسبب مشاكل مؤقتة في واجهة برمجة تطبيقات .
+                قد لا يتم تحميل بعض المنتجات بسبب مشكلة مؤقتة في خدمتنا. يرجى المحاولة مرة أخرى لاحقًا
               </p>
             </div>
           )}
