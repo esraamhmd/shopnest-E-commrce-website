@@ -305,7 +305,11 @@ function SearchPage() {
           {status==="succeeded" && results.length===0 && (
             <div className="no-results">
               <p>{"No results found"}</p>
-              <p className="no-results-sub">Some products may not load due to temporary issues with the DummyJSON API.</p>
+              <p className="no-results-sub">
+                Some products may not load due to temporary issues with the DummyJSON API.
+                <br />
+               قد لا يتم تحميل بعض المنتجات بسبب مشاكل مؤقتة في واجهة برمجة تطبيقات .
+              </p>
             </div>
           )}
 
