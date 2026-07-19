@@ -305,7 +305,7 @@ function SearchPage() {
           {status==="succeeded" && results.length===0 && (
             <div className="no-results">
               <p>{"No results found"}</p>
-              <p className="no-results-sub">Try different keywords or browse categories</p>
+              <p className="no-results-sub">Some products may not load due to temporary issues with the DummyJSON API.</p>
             </div>
           )}
 
